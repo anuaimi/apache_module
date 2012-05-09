@@ -17,4 +17,8 @@ it uses vagrant to create an ubuntu vm that has all the required build tools to 
  - ssh into the machine
  
      `vagrant ssh`
+     `cd /vagrant`
+ - compile your module
+
+     `apxs 
      
