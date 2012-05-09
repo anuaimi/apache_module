@@ -17,27 +17,16 @@ Vagrant::Config.run do |config|
   # physical device on your network.
   # config.vm.network :bridged
 
-  # config.vm.forward_port 80, 8080
+  config.vm.forward_port 80, 8080
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   # config.vm.share_folder "v-data", "/vagrant_data", "../data"
 
-  # # group { "puppet":
-  # #   ensure => "present",
-  # # }
-  # #
-  # # File { owner => 0, group => 0, mode => 0644 }
-  # #
-  # # file { '/etc/motd':
-  # #   content => "Welcome to your Vagrant-built virtual machine!
-  # #               Managed by Puppet.\n"
-  # # }
-  #
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file  = "init.pp"
+    puppet.manifest_file  = "site.pp"
     puppet.module_path = "puppet/modules"
   end
 
