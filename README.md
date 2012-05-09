@@ -9,8 +9,7 @@ it uses vagrant to create an ubuntu vm that has all the required build tools to 
      `git clone git://github.com/anuaimi/apache_module.git`
  - install vagrant
  
-     gem install bundler
-     bundle install
+     `gem install bundler; bundle install`
     
  - create the virtual machine
  

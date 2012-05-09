@@ -21,7 +21,8 @@ node default {
   }
 
   exec { 'apache2-source':
-    command => 'cd /vagrant; /usr/bin/apt-get source apache2',
+    command => '/usr/bin/apt-get source apache2',
+    cwd => '/vagrant',
     loglevel => info,
     timeout => 1800,
   }
