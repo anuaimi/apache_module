@@ -31,4 +31,7 @@ Vagrant::Config.run do |config|
   #  puppet.options = "--verbose --debug"
   end
 
+  #allow symlinks in VirtualBox shared folder 
+  #note: this is normally disabled as it allows a guest OS to access folders outside the share
+  config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 end
