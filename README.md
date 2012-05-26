@@ -6,20 +6,20 @@ This project makes it simple and quick to set up an [Apache](http://httpd.apache
  - install [Vagrant](http://vagrantup.com/).  You can either [download](http://downloads.vagrantup.com/) the package or install using [RubyGems](https://rubygems.org/gems/vagrant).  If you have any problems, check the [Getting Started](http://vagrantup.com/docs/getting-started/index.html) page.
  - Download the base Ubuntu VM.  
  `$ vagrant box add lucid32 http://files.vagrantup.com/lucid32.box`
+ - make sure you have git installed. Github has great [instructions](http://help.github.com/set-up-git-redirect) 
  
 ##Installation##
- - clone the repo
+ - clone the repo  
      `$ git clone git://github.com/anuaimi/apache_module.git`  
-     `cd /vagrant`
- - install vagrant  
-     `$ gem install bundler; bundle install`   
- - create the virtual machine  
+     `cd /apache_module`
+ - create the virtual machine.  This will start Ubuntu and run [Puppet](http://puppetlabs.com/) to install the needed packages.  It will also download the source to Apache.  
      `$ vagrant up`
- - ssh into the machine  
+ -  The Apache source is put in the shared directory (/vagrant in the VM and the current directory on your host computer) which means you can view/edit the source on your host machine and run it in the VM  
+ - When you are ready to compile and run your module, you can ssh into the machine, follow the instruction below  
      `$ vagrant ssh`  
      `$ cd /vagrant`
- - compile your module  
      `sudo apxs2 -c apache-2.2.xx/modules/experimental/mod_example.c`
+ - You can now run Apache and test out your module.
      
 ##Workflow##
  - configure apache the way that you want it

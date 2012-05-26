@@ -1,4 +1,4 @@
 source :rubygems
 
-gem 'vagrant'
-gem 'vagrant-vbguest'
+gem 'vagrant', '~>1.0'
+#gem 'vagrant-vbguest'
