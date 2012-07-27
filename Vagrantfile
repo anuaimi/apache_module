@@ -3,8 +3,12 @@
 
 Vagrant::Config.run do |config|
 
-  config.vm.box = "base"
-  # config.vm.box_url = "http://domain.com/path/to/above.box"
+  config.vm.host_name = 'apache.vagrantup.org'
+
+#  config.vm.box = "lucid32"
+#  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+  config.vm.box = "precise32"
+  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
@@ -23,11 +27,11 @@ Vagrant::Config.run do |config|
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   # config.vm.share_folder "v-data", "/vagrant_data", "../data"
-  config.vm.provision :shell, :inline => "echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null"
+  config.vm.provision :shell, :inline => 'echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null'
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file  = "site.pp"
-    puppet.module_path = "puppet/modules"
+  #  puppet.module_path = "puppet/modules"
   #  puppet.options = "--verbose --debug"
   end
 

@@ -11,7 +11,7 @@ This project makes it simple and quick to set up an [Apache](http://httpd.apache
 ##Installation##
  - clone the repo  
      `$ git clone git://github.com/anuaimi/apache_module.git`  
-     `cd /apache_module`
+     `cd apache_module`
  - create the virtual machine.  This will start Ubuntu and run [Puppet](http://puppetlabs.com/) to install the needed packages.  It will also download the source to Apache.  
      `$ vagrant up`
  -  The Apache source is put in the shared directory (/vagrant in the VM and the current directory on your host computer) which means you can view/edit the source on your host machine and run it in the VM  
